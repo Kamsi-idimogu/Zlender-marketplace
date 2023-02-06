@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\kidim\\Documents\\Zlender-marketplace\\API\\API.csproj": {}
+    "C:\\Users\\kidim\\Documents\\Zlender-marketplace\\API\\API.csproj": {}
   },
   "projects": {
-    "c:\\Users\\kidim\\Documents\\Zlender-marketplace\\API\\API.csproj": {
+    "C:\\Users\\kidim\\Documents\\Zlender-marketplace\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\kidim\\Documents\\Zlender-marketplace\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\kidim\\Documents\\Zlender-marketplace\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "c:\\Users\\kidim\\Documents\\Zlender-marketplace\\API\\API.csproj",
+        "projectPath": "C:\\Users\\kidim\\Documents\\Zlender-marketplace\\API\\API.csproj",
         "packagesPath": "C:\\Users\\kidim\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\kidim\\Documents\\Zlender-marketplace\\API\\obj\\",
+        "outputPath": "C:\\Users\\kidim\\Documents\\Zlender-marketplace\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kidim\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -39,6 +39,8 @@
           "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.8, )"
             },

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tY0Cbaaomv55PjwXH7ZTQe+U+VfjUjOIUhLKCKxs2W/0pBlVWl9r2CZuRhMPeeOmk5abq03vQxTvbCeyAbA5ug==",
+  "dgSpecHash": "aNqJTkjCzueRpXtN9XHZsTEwqbc715ATfv3JYd6C/mKUDpzxomvKqF5KIsVMyLfQEcwCqIlo6DfA0R7hMaB1XQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\kidim\\Documents\\Zlender-marketplace\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\kidim\\Documents\\Zlender-marketplace\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kidim\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\kidim\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
