@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using API.Data;
 using API.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
@@ -12,24 +13,24 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
-        private readonly StoreContext context;
+        private readonly StoreContext _context; // it's a common convention in C# to prefix private readonly fields with underscore
         public ProductsController(StoreContext context)
         {
-            this.context = context;
+            this._context = context;
         }
 
         [HttpGet]
-        public ActionResult<List<Product>> GetProducts()
+        public async Task<ActionResult<List<Product>>> GetProducts()
         {
-            var products = context.Products.ToList();
+            var products = await _context.Products.ToListAsync();
 
             return Ok(products); // a 200 response type
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Product> GetProduct(int id)
+        public async Task<ActionResult<Product>> GetProduct(int id)
         {
-            return context.Products.Find(id);
+            return await _context.Products.FindAsync(id);
         }
     }
 }
