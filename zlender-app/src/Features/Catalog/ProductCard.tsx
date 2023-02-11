@@ -5,7 +5,7 @@ interface Props{
     product: Product;
 }
 
-export default function ProductCard({product} : Props){
+export default function ProductCard({product} : Props){ //destructuring an object of type Props
     return (
         <Card>
             <CardHeader

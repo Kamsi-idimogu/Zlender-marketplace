@@ -1,36 +1,32 @@
-import { Typography } from '@mui/material';
-import React, { useState, useEffect } from 'react';
+import { createTheme, ThemeProvider } from '@mui/material';
+import { useState } from 'react';
 import Catalog from '../../Features/Catalog/Catalog';
-import { Product } from '../Models/product';
+import Header from './Header';
 
 function App() {
-  const [products, setProducts] = useState<Product[]>([]);
+  const [darkMode, setDarkMode] = useState(false);
 
-  useEffect(() => {
-    fetch('http://localhost:5000/api/products')
-    .then(response => response.json())
-    .then(data => setProducts(data))
-  }, []);
+  const paletteType = darkMode ? 'dark' : 'light';
 
-  function addProduct(){
-    setProducts(prevState => [...prevState,
-    {
-      id: prevState.length + 101,
-      name: 'product',
-      price: 100,
-      brand: 's',
-      description: 'd',
-      pictureUrl: 'http://picsum.photos/200'
+  const theme = createTheme({
+    palette: {
+      mode: paletteType,
+      background: {
+        default: paletteType === 'light' ? '#eaeaea' : '#121212'
+      }
     }
-    ])
+  })
+
+  function handleThemeChange(){
+    setDarkMode(!darkMode);
   }
 
   return (
-    <>
-      <Typography variant='h1'>Hwllo</Typography>
-      <Catalog products={products} addProduct={addProduct}/>
+    <ThemeProvider theme={theme}>
+      <Header darkMode={darkMode} handleThemeChange={handleThemeChange}/>
+      <Catalog />
       <div ></div>
-    </>
+    </ThemeProvider>
   );
 }
 
