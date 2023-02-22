@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import agent from "../../App/Api/agent";
 import NotFound from "../../App/Errors/NotFound";
+import LoadingComponent from "../../App/Layout/LoadingComponent";
 import { Product } from "../../App/Models/product";
 
 export default function ProductDetails(){
@@ -20,7 +21,7 @@ export default function ProductDetails(){
     }, [id]);
 
 
-    if(loading) return <h3>Loading...</h3>
+    if(loading) return <LoadingComponent message="Loading product..." />
 
     if(!product) return <NotFound />
 
