@@ -195,7 +195,7 @@ export default function Header({darkMode, handleThemeChange}: Props){
             <Toolbar sx={{display: 'flex', justifyContent:'space-between', alignItems:'center'}}>
             
             <Box display='flex' alignItems='center'>
-            <Typography variant='h6' component={NavLink} to='/' exact
+            <Typography variant='h6' component={NavLink} to='/'
             sx={{color: 'inherit', textDecoration: 'none'}}
             >
                 Hwllo
@@ -227,7 +227,7 @@ export default function Header({darkMode, handleThemeChange}: Props){
 
             <Box display='flex' alignItems='center'>
 
-            <IconButton size='large' sx={{color: 'inherit'}}>
+            <IconButton size='large' edge='start' color='inherit' sx={{mr: 2}}>
                 <Badge badgeContent={4} color='secondary'>
                     <ShoppingCart />
                 </Badge>
