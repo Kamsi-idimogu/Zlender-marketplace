@@ -1,12 +1,8 @@
 import { ShoppingCart } from "@mui/icons-material";
 import { AppBar, Badge, Box, IconButton, List, ListItem, Switch, Toolbar, Typography } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
-// import { IoHeartOutline } from "react-icons/io5";
 import { IoHeartOutline, IoLogoFacebook, IoLogoTwitter, IoLogoLinkedin, IoLogoInstagram, IoCaretBackCircleOutline, IoPersonOutline, IoSearchOutline, IoBagHandleOutline,
   IoMenuOutline, IoHomeOutline, IoGridOutline, IoCloseOutline, IoAddOutline, IoRemoveOutline, IoStar, IoStarHalf, IoStarOutline } from "react-icons/io5";
-// import { AddOutline, BagHandleOutline, CaretBackCircleOutline, CloseOutline, HeartOutline, LogoFacebook, LogoInstagram, LogoLinkedin, LogoTwitter, MenuOutline, PersonOutline, RemoveOutline, Search } from "react-ionicons";
-// import GridOutline from "react-ionicons/lib/GridOutline";
-// import HomeOutline from "react-ionicons/lib/HomeOutline";
 import Log from '../../../public/images/logo.png'
 import { NavLink } from "react-router-dom";
 import './header.scss';
@@ -30,59 +26,144 @@ const rightLinks = [
 export default function Header({darkMode, handleThemeChange}: Props){
   const [isoverlay, setIsOverlay] = useState(false);
 
+  //Category states
+  const [clothesDropdown, setClothesDropdown] = useState(false);
+  const [footwearDropdown, setFootwearDropdown] = useState(false);
+  const [jewelryDropdown, setJewelryDropdown] = useState(false);
+  const [perfumeDropdown, setPerfumeDropdown] = useState(false);
+  const [cosmeticsDropdown, setCosmeticsDropdown] = useState(false);
+  const [glassesDropdown, setGlasssesDropdown] = useState(false);
+  const [bagesDropdown, setBagsDropdown] = useState(false);
+
+  //Menu States
+  const [menMDropdown, setMenMDropdown] = useState(false);
+  const [womenMDropdown, setWomenMDropdown] = useState(false);
+  const [jewelryMDropdown, setJewelryMDropdown] = useState(false);
+  const [perfumrMDropdown, setPerfumeMDropdown] = useState(false);
+  const [languageMDropdown, setLanguageMDropdown] = useState(false);
+  const [currencyMDropdown, setCurrencyMDropdown] = useState(false);
+
+
   function handleOverlay(){
     setIsOverlay(!isoverlay);
   }
 
-  // useEffect(() => {
-  //   const accordionBtn = document.getElementsByClassName('data-accordion-btn');
-  //   const accordion = document.getElementsByClassName('data-accordion');
+  function handleDropDown(id : Number){
+    if(id == 1){
+      setClothesDropdown(!clothesDropdown)
+      setFootwearDropdown(false)
+      setJewelryDropdown(false)
+      setPerfumeDropdown(false)
+      setCosmeticsDropdown(false)
+      setGlasssesDropdown(false)
+      setBagsDropdown(false)
+    }
+    if(id == 2){
+      setFootwearDropdown(!footwearDropdown)
+      setClothesDropdown(false)
+      setJewelryDropdown(false)
+      setPerfumeDropdown(false)
+      setCosmeticsDropdown(false)
+      setGlasssesDropdown(false)
+      setBagsDropdown(false)
+    }
+    if(id == 3){
+      setFootwearDropdown(false)
+      setClothesDropdown(false)
+      setJewelryDropdown(!jewelryDropdown)
+      setPerfumeDropdown(false)
+      setCosmeticsDropdown(false)
+      setGlasssesDropdown(false)
+      setBagsDropdown(false)
+    }
+    if(id == 4){
+      setFootwearDropdown(false)
+      setClothesDropdown(false)
+      setJewelryDropdown(false)
+      setPerfumeDropdown(!perfumeDropdown)
+      setCosmeticsDropdown(false)
+      setGlasssesDropdown(false)
+      setBagsDropdown(false)
+    }
+    if(id == 5){
+      setFootwearDropdown(false)
+      setClothesDropdown(false)
+      setJewelryDropdown(false)
+      setPerfumeDropdown(false)
+      setCosmeticsDropdown(!cosmeticsDropdown)
+      setGlasssesDropdown(false)
+      setBagsDropdown(false)
+    }
+    if(id == 6){
+      setFootwearDropdown(false)
+      setClothesDropdown(false)
+      setJewelryDropdown(false)
+      setPerfumeDropdown(false)
+      setCosmeticsDropdown(false)
+      setGlasssesDropdown(!glassesDropdown)
+      setBagsDropdown(false)
+    }
+    if(id == 7){
+      setFootwearDropdown(false)
+      setClothesDropdown(false)
+      setJewelryDropdown(false)
+      setPerfumeDropdown(false)
+      setCosmeticsDropdown(false)
+      setGlasssesDropdown(false)
+      setBagsDropdown(!bagesDropdown)
+    }
+  }
 
-  //   for (let i = 0; i < accordionBtn.length; i++) {
-
-  //     accordionBtn[i].addEventListener('click', function () {
-  
-  //         const clickedBtn = accordionBtn[i].nextElementSibling?.classList.contains('active');
-  
-  //         for (let i = 0; i < accordion.length; i++) {
-  
-  //         if (clickedBtn) break;
-  
-  //         if (accordion[i].classList.contains('active')) {
-  
-  //             accordion[i].classList.remove('active');
-  //             accordionBtn[i].classList.remove('active');
-  
-  //         }
-  
-  //         }
-  
-  //         accordionBtn[i].nextElementSibling?.classList.toggle('active');
-  //         accordionBtn[i].classList.toggle('active');
-  
-  //     });}
-
-  //   // Array.from(accordionBtn).forEach((element) => {
-
-  //   //   element.addEventListener('click', () => {
-  //   //     const clickedBtn = element.nextElementSibling?.classList.contains('active');
-
-  //   //     for (let i = 0; i < accordion.length; i++) {
-
-  //   //       if (clickedBtn) break;
-  
-  //   //       if (accordion[i].classList.contains('active')) 
-  //   //       {
-  //   //           accordion[i].classList.remove('active');
-  //   //           accordionBtn[i].classList.remove('active');
-  //   //       }
-  //   //     }
-
-  //   //     element.nextElementSibling?.classList.toggle('active');
-  //   //     element.classList.toggle('active');
-  //   //   });
-  //   // })
-  // }, [isoverlay]);
+  function handleMenuDropdown(id : Number){
+    if(id == 1){
+      setMenMDropdown(!menMDropdown)
+      setWomenMDropdown(false)
+      setJewelryMDropdown(false)
+      setPerfumeMDropdown(false)
+      setLanguageMDropdown(false)
+      setCurrencyMDropdown(false)
+    }
+    if(id == 2){
+      setMenMDropdown(false)
+      setWomenMDropdown(!womenMDropdown)
+      setJewelryMDropdown(false)
+      setPerfumeMDropdown(false)
+      setLanguageMDropdown(false)
+      setCurrencyMDropdown(false)
+    }
+    if(id == 3){
+      setMenMDropdown(false)
+      setWomenMDropdown(false)
+      setJewelryMDropdown(!jewelryMDropdown)
+      setPerfumeMDropdown(false)
+      setLanguageMDropdown(false)
+      setCurrencyMDropdown(false)
+    }
+    if(id == 4){
+      setMenMDropdown(false)
+      setWomenMDropdown(false)
+      setJewelryMDropdown(false)
+      setPerfumeMDropdown(!perfumrMDropdown)
+      setLanguageMDropdown(false)
+      setCurrencyMDropdown(false)
+    }
+    if(id == 5){
+      setMenMDropdown(false)
+      setWomenMDropdown(false)
+      setJewelryMDropdown(false)
+      setPerfumeMDropdown(false)
+      setLanguageMDropdown(!languageMDropdown)
+      setCurrencyMDropdown(false)
+    }
+    if(id == 6){
+      setMenMDropdown(false)
+      setWomenMDropdown(false)
+      setJewelryMDropdown(false)
+      setPerfumeMDropdown(false)
+      setLanguageMDropdown(false)
+      setCurrencyMDropdown(!currencyMDropdown)
+    }
+  }
 
   useEffect(() => {
     const mobileMenuOpenBtn = document.getElementsByClassName("data-mobile-menu-open-btn");
@@ -105,184 +186,7 @@ export default function Header({darkMode, handleThemeChange}: Props){
       mobileMenuCloseBtn[index].addEventListener('click', mobileMenuCloseFunc);
       overlay?.addEventListener('click', mobileMenuCloseFunc);
     });
-
-    const accordionBtn = document.getElementsByClassName('data-accordion-btn');
-    const accordion = document.getElementsByClassName('data-accordion');
-
-    for (let i = 0; i < accordionBtn.length; i++) {
-
-      accordionBtn[i].addEventListener('click', function () {
-  
-          const clickedBtn = accordionBtn[i].nextElementSibling?.classList.contains('active');
-  
-          for (let i = 0; i < accordion.length; i++) {
-  
-          if (clickedBtn) break;
-  
-          if (accordion[i].classList.contains('active')) {
-  
-              accordion[i].classList.remove('active');
-              accordionBtn[i].classList.remove('active');
-  
-          }
-  
-          }
-  
-          accordionBtn[i].nextElementSibling?.classList.toggle('active');
-          accordionBtn[i].classList.toggle('active');
-  
-      });}
-
-    // const accordionBtn = document.getElementsByClassName('data-accordion-btn');
-    // const accordion = document.getElementsByClassName('data-accordion');
-
-    // Array.from(accordionBtn).forEach((element) => {
-
-    //   element.addEventListener('click', () => {
-    //     const clickedBtn = element.nextElementSibling?.classList.contains('active');
-
-    //     // Array.from(accordion).forEach((ele, index) => {
-    //     //   if(clickedBtn) break;
-
-    //     //   if(ele.classList.contains('active')){
-    //     //     ele.classList.remove('active');
-    //     //     accordionBtn[index].classList.remove('active');
-
-    //     //   }
-    //     // });
-
-    //     for (let i = 0; i < accordion.length; i++) {
-
-    //       if (clickedBtn) break;
-  
-    //       if (accordion[i].classList.contains('active')) {
-  
-    //           accordion[i].classList.remove('active');
-    //           accordionBtn[i].classList.remove('active');
-  
-    //       }
-  
-    //       }
-
-    //     element.nextElementSibling?.classList.toggle('active');
-    //     element.classList.toggle('active');
-    //   });
-    // });
-
-
-
-
-
-  // for (let i = 0; i < accordionBtn.length; i++) {
-
-  //   accordionBtn[i].addEventListener('click', function () {
-
-  //       const clickedBtn = accordionBtn[i].nextElementSibling?.classList.contains('active');
-
-  //       for (let i = 0; i < accordion.length; i++) {
-
-  //       if (clickedBtn) break;
-
-  //       if (accordion[i].classList.contains('active')) {
-
-  //           accordion[i].classList.remove('active');
-  //           accordionBtn[i].classList.remove('active');
-
-  //       }
-
-  //       }
-
-  //       accordionBtn[i].nextElementSibling?.classList.toggle('active');
-  //       accordionBtn[i].classList.toggle('active');
-
-  //   });}
-
-
   }, []);
-
-    // // mobile menu variables
-    // const mobileMenuOpenBtn = document.querySelectorAll('[data-mobile-menu-open-btn]');
-    // const mobileMenu = document.querySelectorAll('[data-mobile-menu]');
-    // const mobileMenuCloseBtn = document.querySelectorAll('[data-mobile-menu-close-btn]');
-    // const overlay = document.querySelector('[data-overlay]');
-
-    // for (let i = 0; i < mobileMenuOpenBtn.length; i++) {
-
-    // // mobile menu function
-    // const mobileMenuCloseFunc = function () {
-    //     mobileMenu[i].classList.remove('active');
-    //    if(overlay){ overlay.classList.remove('active'); }
-    // }
-
-    // mobileMenuOpenBtn[i].addEventListener('click', function () {
-    //     mobileMenu[i].classList.add('active');
-    //     if(overlay){ overlay.classList.add('active'); }
-    // });
-
-    // mobileMenuCloseBtn[i].addEventListener('click', mobileMenuCloseFunc);
-    // if(overlay){ overlay.addEventListener('click', mobileMenuCloseFunc); }
-
-    // }
-
-    // // accordion variables
-    // const accordionBtn = document.querySelectorAll('[data-accordion-btn]');
-    // const accordion = document.querySelectorAll('[data-accordion]');
-
-    // for (let i = 0; i < accordionBtn.length; i++) {
-
-    // accordionBtn[i].addEventListener('click', function () {
-
-    //     const clickedBtn = this.nextElementSibling.classList.contains('active');
-
-    //     for (let i = 0; i < accordion.length; i++) {
-
-    //     if (clickedBtn) break;
-
-    //     if (accordion[i].classList.contains('active')) {
-
-    //         accordion[i].classList.remove('active');
-    //         accordionBtn[i].classList.remove('active');
-
-    //     }
-
-    //     }
-
-    //     this.nextElementSibling.classList.toggle('active');
-    //     this.classList.toggle('active');
-
-    // });
-
-    // }
-
-    // const Accordion: React.FC = () => {
-
-
-        // const accordionBtn = useRef<HTMLCollectionOf<Element>>(
-        //   document.getElementsByClassName('data-accordion-btn')
-        // );
-        // const accordion = useRef<HTMLCollectionOf<Element>>(
-        //   document.getElementsByClassName('data-accordion')
-        // );
-      
-        // useEffect(() => {
-        //   Array.from(accordionBtn.current).forEach((btn, i) => {
-        //     btn.addEventListener('click', () => {
-        //       const v = btn.nextElementSibling;
-        //       let clickedBtn = false;
-        //       if (v != null) { clickedBtn = v.classList.contains('active') }
-        //       Array.from(accordion.current).forEach((item, i) => {
-        //         if (clickedBtn) return;
-        //         if (item.classList.contains('active')) {
-        //           item.classList.remove('active');
-        //           btn.classList.remove('active');
-        //         }
-        //       });
-        //       if(btn.nextElementSibling != null){
-        //       btn.nextElementSibling.classList.toggle('active');}
-        //       btn.classList.toggle('active');
-        //     });
-        //   });
-        // }, []);
 
     return(
         <>
@@ -759,16 +663,21 @@ export default function Header({darkMode, handleThemeChange}: Props){
 
     <li className="menu-category">
 
-      <button className="accordion-menu data-accordion-btn">
+      <button className="accordion-menu data-accordion-btn" onClick={() => {handleMenuDropdown(1)}}>
         <p className="menu-title">Men's</p>
 
         <div>
-            <IoAddOutline className='add-icon ion-icon'></IoAddOutline>
-            <IoRemoveOutline className='remove-icon ion-icon'/>
+          {!menMDropdown ?
+            <IoAddOutline className="add-icon ion-icon" />
+            :
+            <IoRemoveOutline className="remove-icon ion-icon" />
+          }
+            {/* <IoAddOutline className='add-icon ion-icon'></IoAddOutline>
+            <IoRemoveOutline className='remove-icon ion-icon'/> */}
         </div>
       </button>
 
-      <ul className="submenu-category-list data-accordion">
+      <ul className={`submenu-category-list data-accordion ${menMDropdown ? 'active' : ''}`}>
 
         <li className="submenu-category">
           <a href="#" className="submenu-title">Shirt</a>
@@ -792,16 +701,21 @@ export default function Header({darkMode, handleThemeChange}: Props){
 
     <li className="menu-category">
 
-      <button className="accordion-menu data-accordion-btn">
+      <button className="accordion-menu data-accordion-btn" onClick={() => {handleMenuDropdown(2)}}>
         <p className="menu-title">Women's</p>
 
         <div>
-            <IoAddOutline className='add-icon ion-icon'></IoAddOutline>
-            <IoRemoveOutline className='remove-icon ion-icon'/>
+          {!womenMDropdown ?
+            <IoAddOutline className="add-icon ion-icon" />
+            :
+            <IoRemoveOutline className="remove-icon ion-icon" />
+          }
+            {/* <IoAddOutline className='add-icon ion-icon'></IoAddOutline>
+            <IoRemoveOutline className='remove-icon ion-icon'/> */}
         </div>
       </button>
 
-      <ul className="submenu-category-list data-accordion">
+      <ul className={`submenu-category-list data-accordion ${womenMDropdown ? 'active' : ''}`}>
 
         <li className="submenu-category">
           <a href="#" className="submenu-title">Dress & Frock</a>
@@ -825,16 +739,21 @@ export default function Header({darkMode, handleThemeChange}: Props){
 
     <li className="menu-category">
 
-      <button className="accordion-menu data-accordion-btn">
+      <button className="accordion-menu data-accordion-btn" onClick={() => {handleMenuDropdown(3)}}>
         <p className="menu-title">Jewelry</p>
 
         <div>
-            <IoAddOutline className='add-icon ion-icon'></IoAddOutline>
-            <IoRemoveOutline className='remove-icon ion-icon'/>
+          {!jewelryMDropdown ?
+            <IoAddOutline className="add-icon ion-icon" />
+            :
+            <IoRemoveOutline className="remove-icon ion-icon" />
+          }
+            {/* <IoAddOutline className='add-icon ion-icon'></IoAddOutline>
+            <IoRemoveOutline className='remove-icon ion-icon'/> */}
         </div>
       </button>
 
-      <ul className="submenu-category-list data-accordion">
+      <ul className={`submenu-category-list data-accordion ${jewelryMDropdown ? 'active' : ''}`}>
 
         <li className="submenu-category">
           <a href="#" className="submenu-title">Earrings</a>
@@ -858,16 +777,21 @@ export default function Header({darkMode, handleThemeChange}: Props){
 
     <li className="menu-category">
 
-      <button className="accordion-menu data-accordion-btn" >
+      <button className="accordion-menu data-accordion-btn" onClick={() => {handleMenuDropdown(4)}}>
         <p className="menu-title">Perfume</p>
 
         <div>
-            <IoAddOutline className='add-icon ion-icon'></IoAddOutline>
-            <IoRemoveOutline className='remove-icon ion-icon'/>
+          {!perfumrMDropdown ?
+            <IoAddOutline className="add-icon ion-icon" />
+            :
+            <IoRemoveOutline className="remove-icon ion-icon" />
+          }
+            {/* <IoAddOutline className='add-icon ion-icon'></IoAddOutline>
+            <IoRemoveOutline className='remove-icon ion-icon'/> */}
         </div>
       </button>
 
-      <ul className="submenu-category-list data-accordion">
+      <ul className={`submenu-category-list data-accordion ${perfumrMDropdown ? 'active' : ''}`}>
 
         <li className="submenu-category">
           <a href="#" className="submenu-title">Clothes Perfume</a>
@@ -905,12 +829,12 @@ export default function Header({darkMode, handleThemeChange}: Props){
 
       <li className="menu-category">
 
-        <button className="accordion-menu data-accordion-btn">
+        <button className={`accordion-menu data-accordion-btn ${languageMDropdown ? 'active' : ''}`} onClick={() => {handleMenuDropdown(5)}}>
           <p className="menu-title">Language</p>
             <IoCaretBackCircleOutline className='caret-back ion-icon' />
         </button>
 
-        <ul className="submenu-category-list data-accordion">
+        <ul className={`submenu-category-list data-accordion ${languageMDropdown ? 'active' : ''}`}>
 
           <li className="submenu-category">
             <a href="#" className="submenu-title">English</a>
@@ -929,12 +853,12 @@ export default function Header({darkMode, handleThemeChange}: Props){
       </li>
 
       <li className="menu-category">
-        <button className="accordion-menu data-accordion-btn">
+        <button className={`accordion-menu data-accordion-btn ${currencyMDropdown ? 'active' : ''}`} onClick={() => {handleMenuDropdown(6)}}>
           <p className="menu-title">Currency</p>
           <IoCaretBackCircleOutline className='caret-back ion-icon'/>
         </button>
 
-        <ul className="submenu-category-list data-accordion">
+        <ul className={`submenu-category-list data-accordion ${currencyMDropdown ? 'active' : ''}`}>
           <li className="submenu-category">
             <a href="#" className="submenu-title">USD $</a>
           </li>
@@ -999,7 +923,7 @@ export default function Header({darkMode, handleThemeChange}: Props){
 
             <li className="sidebar-menu-category">
 
-              <button className="sidebar-accordion-menu data-accordion-btn">
+              <button className="sidebar-accordion-menu data-accordion-btn" onClick={() => {handleDropDown(1)}}>
 
                 <div className="menu-title-flex">
                   <img src="http://picsum.photos/200" alt="clothes" width="20" height="20"
@@ -1009,13 +933,17 @@ export default function Header({darkMode, handleThemeChange}: Props){
                 </div>
 
                 <div>
+                  {!clothesDropdown ?
                   <IoAddOutline className="add-icon ion-icon" />
+                    :
                   <IoRemoveOutline className="remove-icon ion-icon" />
+                  }
+                  {/* <IoAddOutline className="add-icon ion-icon" />
+                  <IoRemoveOutline className="remove-icon ion-icon" /> */}
                 </div>
 
               </button>
-
-              <ul className="sidebar-submenu-category-list data-accordion">
+              <ul className={`sidebar-submenu-category-list data-accordion ${clothesDropdown ? 'active' : ''}`}>
 
                 <li className="sidebar-submenu-category">
                   <a href="#" className="sidebar-submenu-title">
@@ -1051,7 +979,7 @@ export default function Header({darkMode, handleThemeChange}: Props){
 
             <li className="sidebar-menu-category">
 
-              <button className="sidebar-accordion-menu data-accordion-btn" >
+              <button className="sidebar-accordion-menu data-accordion-btn" onClick={() => {handleDropDown(2)}}>
 
                 <div className="menu-title-flex">
                   <img src="http://picsum.photos/200" alt="footwear" className="menu-title-img" width="20"
@@ -1061,13 +989,18 @@ export default function Header({darkMode, handleThemeChange}: Props){
                 </div>
 
                 <div>
+                  {!footwearDropdown ?
                   <IoAddOutline className="add-icon ion-icon" />
+                    :
                   <IoRemoveOutline className="remove-icon ion-icon" />
+                  }
+                  {/* <IoAddOutline className='add-icon ion-icon'/>
+                  <IoRemoveOutline className='remove-icon ion-icon' /> */}
                 </div>
 
               </button>
 
-              <ul className="sidebar-submenu-category-list data-accordion">
+              <ul className={`sidebar-submenu-category-list data-accordion ${footwearDropdown ? 'active' : ''}`}>
 
                 <li className="sidebar-submenu-category">
                   <a href="#" className="sidebar-submenu-title">
@@ -1103,7 +1036,7 @@ export default function Header({darkMode, handleThemeChange}: Props){
 
             <li className="sidebar-menu-category">
 
-              <button className="sidebar-accordion-menu data-accordion-btn" >
+              <button className="sidebar-accordion-menu data-accordion-btn" onClick={() => {handleDropDown(3)}}>
 
                 <div className="menu-title-flex">
                   <img src="http://picsum.photos/200" alt="clothes" className="menu-title-img" width="20"
@@ -1113,13 +1046,18 @@ export default function Header({darkMode, handleThemeChange}: Props){
                 </div>
 
                 <div>
+                {!jewelryDropdown ?
                   <IoAddOutline className="add-icon ion-icon" />
+                    :
                   <IoRemoveOutline className="remove-icon ion-icon" />
+                  }
+                  {/* <IoAddOutline className="add-icon ion-icon" />
+                  <IoRemoveOutline className="remove-icon ion-icon" /> */}
                 </div>
 
               </button>
 
-              <ul className="sidebar-submenu-category-list data-accordion" >
+              <ul className={`sidebar-submenu-category-list data-accordion ${jewelryDropdown ? 'active' : ''}`} >
 
                 <li className="sidebar-submenu-category">
                   <a href="#" className="sidebar-submenu-title">
@@ -1148,7 +1086,7 @@ export default function Header({darkMode, handleThemeChange}: Props){
 
             <li className="sidebar-menu-category">
 
-              <button className="sidebar-accordion-menu data-accordion-btn" >
+              <button className="sidebar-accordion-menu data-accordion-btn" onClick={() => {handleDropDown(4)}}>
 
                 <div className="menu-title-flex">
                   <img src="http://picsum.photos/200" alt="perfume" className="menu-title-img" width="20"
@@ -1158,13 +1096,18 @@ export default function Header({darkMode, handleThemeChange}: Props){
                 </div>
 
                 <div>
+                {!perfumeDropdown ?
                   <IoAddOutline className="add-icon ion-icon" />
+                    :
                   <IoRemoveOutline className="remove-icon ion-icon" />
+                  }
+                  {/* <IoAddOutline className="add-icon ion-icon" />
+                  <IoRemoveOutline className="remove-icon ion-icon" /> */}
                 </div>
 
               </button>
 
-              <ul className="sidebar-submenu-category-list data-accordion">
+              <ul className={`sidebar-submenu-category-list data-accordion ${perfumeDropdown ? 'active' : ''}`}>
 
                 <li className="sidebar-submenu-category">
                   <a href="#" className="sidebar-submenu-title">
@@ -1200,7 +1143,7 @@ export default function Header({darkMode, handleThemeChange}: Props){
 
             <li className="sidebar-menu-category">
 
-              <button className="sidebar-accordion-menu data-accordion-btn" >
+              <button className="sidebar-accordion-menu data-accordion-btn" onClick={() => {handleDropDown(5)}}>
 
                 <div className="menu-title-flex">
                   <img src="http://picsum.photos/200" alt="cosmetics" className="menu-title-img" width="20"
@@ -1210,13 +1153,18 @@ export default function Header({darkMode, handleThemeChange}: Props){
                 </div>
 
                 <div>
+                  {!cosmeticsDropdown ?
                   <IoAddOutline className="add-icon ion-icon" />
+                    :
                   <IoRemoveOutline className="remove-icon ion-icon" />
+                  }
+                  {/* <IoAddOutline className="add-icon ion-icon" />
+                  <IoRemoveOutline className="remove-icon ion-icon" /> */}
                 </div>
 
               </button>
 
-              <ul className="sidebar-submenu-category-list data-accordion" >
+              <ul className={`sidebar-submenu-category-list data-accordion ${cosmeticsDropdown ? 'active' : ''}`} >
 
                 <li className="sidebar-submenu-category">
                   <a href="#" className="sidebar-submenu-title">
@@ -1252,7 +1200,7 @@ export default function Header({darkMode, handleThemeChange}: Props){
 
             <li className="sidebar-menu-category">
 
-              <button className="sidebar-accordion-menu data-accordion-btn" >
+              <button className="sidebar-accordion-menu data-accordion-btn" onClick={() => {handleDropDown(6)}}>
 
                 <div className="menu-title-flex">
                   <img src="http://picsum.photos/200" alt="glasses" className="menu-title-img" width="20"
@@ -1262,13 +1210,18 @@ export default function Header({darkMode, handleThemeChange}: Props){
                 </div>
 
                 <div>
+                  {!glassesDropdown ?
                   <IoAddOutline className="add-icon ion-icon" />
+                    :
                   <IoRemoveOutline className="remove-icon ion-icon" />
+                  }
+                  {/* <IoAddOutline className="add-icon ion-icon" />
+                  <IoRemoveOutline className="remove-icon ion-icon" /> */}
                 </div>
 
               </button>
 
-              <ul className="sidebar-submenu-category-list data-accordion" >
+              <ul className={`sidebar-submenu-category-list data-accordion ${glassesDropdown ? 'active' : ''}`} >
 
                 <li className="sidebar-submenu-category">
                   <a href="#" className="sidebar-submenu-title">
@@ -1290,7 +1243,7 @@ export default function Header({darkMode, handleThemeChange}: Props){
 
             <li className="sidebar-menu-category">
 
-              <button className="sidebar-accordion-menu data-accordion-btn" >
+              <button className="sidebar-accordion-menu data-accordion-btn" onClick={() => {handleDropDown(7)}}>
 
                 <div className="menu-title-flex">
                   <img src="http://picsum.photos/200" alt="bags" className="menu-title-img" width="20" height="20" />
@@ -1299,13 +1252,18 @@ export default function Header({darkMode, handleThemeChange}: Props){
                 </div>
 
                 <div>
+                  {!bagesDropdown ?
                   <IoAddOutline className="add-icon ion-icon" />
+                    :
                   <IoRemoveOutline className="remove-icon ion-icon" />
+                  }
+                  {/* <IoAddOutline className="add-icon ion-icon" />
+                  <IoRemoveOutline className="remove-icon ion-icon" /> */}
                 </div>
 
               </button>
 
-              <ul className="sidebar-submenu-category-list data-accordion" >
+              <ul className={`sidebar-submenu-category-list data-accordion ${bagesDropdown ? 'active' : ''}`} >
 
                 <li className="sidebar-submenu-category">
                   <a href="#" className="sidebar-submenu-title">
