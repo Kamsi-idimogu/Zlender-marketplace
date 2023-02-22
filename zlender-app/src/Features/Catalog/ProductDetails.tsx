@@ -14,14 +14,14 @@ export default function ProductDetails(){
     useEffect(() => {
         id && agent.Catalog.details(parseInt(id))
             .then(response => setProduct(response))
-            .catch(error => console.log(error))
+            .catch(error => console.log(error.response))
             .finally(() => setLoading(false));
     }, [id]);
 
 
     if(loading) return <h3>Loading...</h3>
 
-    if(!product) return <h3>Product not fount</h3>
+    if(!product) return <h3>Product not found</h3>
 
     return (
         <Grid container spacing={6}>
