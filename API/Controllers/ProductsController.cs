@@ -7,9 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class ProductsController : ControllerBase
+    public class ProductsController : BaseApiController
     {
         private readonly StoreContext _context; // it's a common convention in C# to prefix private readonly fields with underscore
         public ProductsController(StoreContext context)
@@ -17,7 +15,7 @@ namespace API.Controllers
             this._context = context;
         }
 
-        [HttpGet]
+        [HttpGet] //End points
         public async Task<ActionResult<List<Product>>> GetProducts()
         {
             var products = await _context.Products.ToListAsync();
@@ -25,7 +23,7 @@ namespace API.Controllers
             return Ok(products); // a 200 response type
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}")] //End point with unique id
         public async Task<ActionResult<Product>> GetProduct(int id)
         {
             return await _context.Products.FindAsync(id);

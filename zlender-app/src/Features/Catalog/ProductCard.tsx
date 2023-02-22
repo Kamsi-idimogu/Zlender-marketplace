@@ -36,7 +36,7 @@ export default function ProductCard({product} : Props){ //destructuring an objec
             <CardActions>
             <Button size="small">Add to Cart</Button>
             <Button component={Link} to={`/catalog/${product.id}`} size="small">View</Button>
-            </CardActions>`
+            </CardActions>
       </Card>
     )
 }
