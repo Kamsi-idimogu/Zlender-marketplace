@@ -3,6 +3,7 @@ import AboutPage from "../../Features/About/AboutPage";
 import BasketPage from "../../Features/Basket/BasketPage";
 import Catalog from "../../Features/Catalog/Catalog";
 import ProductDetails from "../../Features/Catalog/ProductDetails";
+import CheckoutPage from "../../Features/Checkout/CheckoutPage";
 import ContactPage from "../../Features/Contact/ContactPage";
 import HomePage from "../../Features/Home/HomePage";
 import NotFound from "../Errors/NotFound";
@@ -22,6 +23,7 @@ export const router = createBrowserRouter([
             {path: 'server-error', element: <ServerError />},
             {path: 'not-found', element: <NotFound />},
             {path: 'basket', element: <BasketPage />},
+            {path: 'checkout', element: <CheckoutPage />},
             {path: '*', element: <Navigate replace to='/not-found'/>},
         ]
     }
