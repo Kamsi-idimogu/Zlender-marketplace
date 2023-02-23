@@ -14,6 +14,6 @@ namespace API.DTOs
 
         public string Type { get; set; }
 
-        public int Quantitiy { get; set; }
+        public int Quantity { get; set; }
     }
 }

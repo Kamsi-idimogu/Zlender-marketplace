@@ -20,6 +20,8 @@ function App() {
       agent.Basket.get()
         .then(basket => setBasket(basket))
         .finally(() => setLoading(false));
+    } else {
+      setLoading(false);
     }
   }, [setBasket])
 
