@@ -1,5 +1,8 @@
+import { LoadingButton } from "@mui/lab";
 import { CardHeader,  Avatar, Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import agent from "../../App/Api/agent";
 import { Product } from "../../App/Models/product";
 
 interface Props{
@@ -7,6 +10,15 @@ interface Props{
 }
 
 export default function ProductCard({product} : Props){ //destructuring an object of type Props
+    const [loading, setLoading] = useState(false);
+
+    function handleAddItem(productId: number){
+        setLoading(true);
+        agent.Basket.addItem(productId)
+            .catch(error => console.log(error))
+            .finally(() => setLoading(false))
+    }
+
     return (
         <Card>
             <CardHeader
@@ -34,7 +46,7 @@ export default function ProductCard({product} : Props){ //destructuring an objec
             </Typography>
             </CardContent>
             <CardActions>
-            <Button size="small">Add to Cart</Button>
+            <LoadingButton loading={loading} onClick={() => handleAddItem(product.id)} size="small">Add to Cart</LoadingButton>
             <Button component={Link} to={`/catalog/${product.id}`} size="small">View</Button>
             </CardActions>
       </Card>
