@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 import agent from "../../App/Api/agent";
 import { UseStoreContext } from "../../App/Context/StoreContext";
 import { Product } from "../../App/Models/product";
+import { useAppDispatch } from "../../App/Store/configureStore";
 import { currencyFormat } from "../../App/Util/util";
+import { setBasket } from "../Basket/basketSlice";
 
 interface Props{
     product: Product;
@@ -13,12 +15,12 @@ interface Props{
 
 export default function ProductCard({product} : Props){ //destructuring an object of type Props
     const [loading, setLoading] = useState(false);
-    const {setBasket} = UseStoreContext();
+    const dispatch = useAppDispatch();
 
     function handleAddItem(productId: number){
         setLoading(true);
         agent.Basket.addItem(productId)
-            .then(basket => setBasket(basket))
+            .then(basket => dispatch(setBasket(basket)))
             .catch(error => console.log(error))
             .finally(() => setLoading(false))
     }
