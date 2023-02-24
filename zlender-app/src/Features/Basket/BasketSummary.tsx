@@ -1,4 +1,4 @@
-import { TableContainer, Paper, Table, TableBody, TableRow, TableCell, Typography } from "@mui/material";
+import { TableContainer, Paper, Table, TableBody, TableRow, TableCell } from "@mui/material";
 import { UseStoreContext } from "../../App/Context/StoreContext";
 import { currencyFormat } from "../../App/Util/util";
 
