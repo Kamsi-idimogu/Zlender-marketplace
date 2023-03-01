@@ -1,9 +1,10 @@
-import { Box, Checkbox, FormControl, FormControlLabel, FormGroup, Grid, Pagination, Paper, Radio, RadioGroup, TextField, Typography } from "@mui/material";
+import { Box, Checkbox, FormControl, FormControlLabel, FormGroup, Grid, Pagination, Paper, Radio, RadioGroup, Typography } from "@mui/material";
 import { useEffect } from "react";
 import LoadingComponent from "../../App/Layout/LoadingComponent";
 import { useAppDispatch, useAppSelector } from "../../App/Store/configureStore";
 import { fetchFilters, fetchProductsAsync, productSelectors } from "./catalogSlice";
 import ProductList from "./ProductList";
+import ProductSearch from "./ProductSearch";
 
 const sortOptions = [
   {value: 'name', label: 'Alpabetical'},
@@ -30,11 +31,7 @@ export default function Catalog(){
         <Grid container spacing={4}>
           <Grid item xs={3}>
             <Paper sx={{mb:2}}>
-              <TextField 
-                label='Search products'
-                variant='outlined'
-                fullWidth
-              />
+              <ProductSearch />
             </Paper>
             <Paper sx={{mb:2, padding: 2}}>
               <FormControl>
