@@ -1,5 +1,7 @@
 import {createBrowserRouter, Navigate} from "react-router-dom";
 import AboutPage from "../../Features/About/AboutPage";
+import Login from "../../Features/Account/Login";
+import Register from "../../Features/Account/Register";
 import BasketPage from "../../Features/Basket/BasketPage";
 import Catalog from "../../Features/Catalog/Catalog";
 import ProductDetails from "../../Features/Catalog/ProductDetails";
@@ -24,6 +26,8 @@ export const router = createBrowserRouter([
             {path: 'not-found', element: <NotFound />},
             {path: 'basket', element: <BasketPage />},
             {path: 'checkout', element: <CheckoutPage />},
+            {path: 'login', element: <Login />},
+            {path: 'register', element: <Register />},
             {path: '*', element: <Navigate replace to='/not-found'/>},
         ]
     }
