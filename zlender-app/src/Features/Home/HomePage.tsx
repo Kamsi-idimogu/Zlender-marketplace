@@ -1,4 +1,3 @@
-import { Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { IoHeartOutline, IoLogoFacebook, IoLogoTwitter, IoLogoLinkedin, IoLogoInstagram, IoCaretBackCircleOutline, IoPersonOutline, IoSearchOutline, IoBagHandleOutline,
     IoMenuOutline, IoHomeOutline, IoGridOutline, IoCloseOutline, IoAddOutline, IoRemoveOutline, IoStar, IoStarHalf } from "react-icons/io5";
@@ -30,7 +29,7 @@ export default function HomePage(){
     }
   
     function handleDropDown(id : Number){
-      if(id == 1){
+      if(id === 1){
         setClothesDropdown(!clothesDropdown)
         setFootwearDropdown(false)
         setJewelryDropdown(false)
@@ -39,7 +38,7 @@ export default function HomePage(){
         setGlasssesDropdown(false)
         setBagsDropdown(false)
       }
-      if(id == 2){
+      if(id === 2){
         setFootwearDropdown(!footwearDropdown)
         setClothesDropdown(false)
         setJewelryDropdown(false)
@@ -48,7 +47,7 @@ export default function HomePage(){
         setGlasssesDropdown(false)
         setBagsDropdown(false)
       }
-      if(id == 3){
+      if(id === 3){
         setFootwearDropdown(false)
         setClothesDropdown(false)
         setJewelryDropdown(!jewelryDropdown)
@@ -57,7 +56,7 @@ export default function HomePage(){
         setGlasssesDropdown(false)
         setBagsDropdown(false)
       }
-      if(id == 4){
+      if(id === 4){
         setFootwearDropdown(false)
         setClothesDropdown(false)
         setJewelryDropdown(false)
@@ -66,7 +65,7 @@ export default function HomePage(){
         setGlasssesDropdown(false)
         setBagsDropdown(false)
       }
-      if(id == 5){
+      if(id === 5){
         setFootwearDropdown(false)
         setClothesDropdown(false)
         setJewelryDropdown(false)
@@ -75,7 +74,7 @@ export default function HomePage(){
         setGlasssesDropdown(false)
         setBagsDropdown(false)
       }
-      if(id == 6){
+      if(id === 6){
         setFootwearDropdown(false)
         setClothesDropdown(false)
         setJewelryDropdown(false)
@@ -84,7 +83,7 @@ export default function HomePage(){
         setGlasssesDropdown(!glassesDropdown)
         setBagsDropdown(false)
       }
-      if(id == 7){
+      if(id === 7){
         setFootwearDropdown(false)
         setClothesDropdown(false)
         setJewelryDropdown(false)
@@ -96,7 +95,7 @@ export default function HomePage(){
     }
   
     function handleMenuDropdown(id : Number){
-      if(id == 1){
+      if(id === 1){
         setMenMDropdown(!menMDropdown)
         setWomenMDropdown(false)
         setJewelryMDropdown(false)
@@ -104,7 +103,7 @@ export default function HomePage(){
         setLanguageMDropdown(false)
         setCurrencyMDropdown(false)
       }
-      if(id == 2){
+      if(id === 2){
         setMenMDropdown(false)
         setWomenMDropdown(!womenMDropdown)
         setJewelryMDropdown(false)
@@ -112,7 +111,7 @@ export default function HomePage(){
         setLanguageMDropdown(false)
         setCurrencyMDropdown(false)
       }
-      if(id == 3){
+      if(id === 3){
         setMenMDropdown(false)
         setWomenMDropdown(false)
         setJewelryMDropdown(!jewelryMDropdown)
@@ -120,7 +119,7 @@ export default function HomePage(){
         setLanguageMDropdown(false)
         setCurrencyMDropdown(false)
       }
-      if(id == 4){
+      if(id === 4){
         setMenMDropdown(false)
         setWomenMDropdown(false)
         setJewelryMDropdown(false)
@@ -128,7 +127,7 @@ export default function HomePage(){
         setLanguageMDropdown(false)
         setCurrencyMDropdown(false)
       }
-      if(id == 5){
+      if(id === 5){
         setMenMDropdown(false)
         setWomenMDropdown(false)
         setJewelryMDropdown(false)
@@ -136,7 +135,7 @@ export default function HomePage(){
         setLanguageMDropdown(!languageMDropdown)
         setCurrencyMDropdown(false)
       }
-      if(id == 6){
+      if(id === 6){
         setMenMDropdown(false)
         setWomenMDropdown(false)
         setJewelryMDropdown(false)
