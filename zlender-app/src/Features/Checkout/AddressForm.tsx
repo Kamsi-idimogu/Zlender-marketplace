@@ -1,20 +1,17 @@
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import { useForm } from 'react-hook-form';
+import { useFormContext } from 'react-hook-form';
 import AppTextInput from '../../App/Components/AppTextInput';
-import { Button } from '@mui/material';
 
 export default function AddressForm() {
-  const {control, handleSubmit} = useForm();
+  const { control } = useFormContext();
   return (
     <>
       <Typography variant="h6" gutterBottom>
         Shipping address
       </Typography>
-      <form onSubmit={handleSubmit((data) => console.log(data))}>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={12}>
           <AppTextInput 
@@ -72,8 +69,6 @@ export default function AddressForm() {
           />
         </Grid>
       </Grid>
-      <Button type='submit'>Submit form</Button>
-      </form>
     </>
   );
 }
