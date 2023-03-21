@@ -5,11 +5,9 @@ import { Outlet } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import Header from './Header';
 import 'react-toastify/dist/ReactToastify.css';
-import agent from '../Api/agent';
 import LoadingComponent from './LoadingComponent';
-import { getCookies } from '../Util/util';
 import { useAppDispatch } from '../Store/configureStore';
-import { fetchBasketAsync, setBasket } from '../../Features/Basket/basketSlice';
+import { fetchBasketAsync } from '../../Features/Basket/basketSlice';
 import { fetchCurrentUser } from '../../Features/Account/accountSlice';
 
 function App() {
