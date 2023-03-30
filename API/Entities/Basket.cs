@@ -11,6 +11,10 @@ namespace API.Entities
 
         public List<BasketItem> Items { get; set; } = new(); //initialize it so it won't be null (it's an empty list)
 
+        public string PaymentIntentId { get; set; }
+
+        public string ClientSecret { get; set; }
+
         public void AddItem(Product product, int quantity)
         {
             if(Items.All(item => item.ProductId != product.Id)) //if the product has not been added before
