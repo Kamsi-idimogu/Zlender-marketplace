@@ -7,7 +7,7 @@ import BasketTable from "./BasketTable";
 export default function BasketPage() {
     const {basket} = useAppSelector(state => state.basket);
 
-    if(!basket) return <Typography variant="h3">Your basket is empty</Typography>
+    if(!basket || !basket.items?.length) return <Typography variant="h3">Your basket is empty</Typography>
 
     return (
         <>
@@ -18,6 +18,7 @@ export default function BasketPage() {
                     <BasketSummary />
                     <Button
                         component={Link}
+                        disabled={basket?.items?.length === 0}
                         to='/checkout'
                         variant="contained"
                         size="large"
