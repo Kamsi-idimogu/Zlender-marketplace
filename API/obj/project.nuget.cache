@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "F5RJ7v6jjr//5lEuEs/9rqjt5Kkl+IcaquVeHjwTT8Px0ljUkUuqsxmdfH56sbMLefXTR0JxO4gS8Ql/NKZ+sQ==",
+  "dgSpecHash": "wpQMq2JYtCxwXw7JsDU4ZMOZXk8YoC8WDeHoYNPLb2R4bwzM2KfWvP12t56BOBgDfagg2Im0+TcfPDLCzjr+Yg==",
   "success": true,
   "projectFilePath": "C:\\Users\\kidim\\Documents\\Zlender-marketplace\\API\\API.csproj",
   "expectedPackageFiles": [
@@ -62,7 +62,8 @@
     "C:\\Users\\kidim\\.nuget\\packages\\system.security.cryptography.protecteddata\\5.0.0\\system.security.cryptography.protecteddata.5.0.0.nupkg.sha512",
     "C:\\Users\\kidim\\.nuget\\packages\\system.security.permissions\\5.0.0\\system.security.permissions.5.0.0.nupkg.sha512",
     "C:\\Users\\kidim\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
-    "C:\\Users\\kidim\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
+    "C:\\Users\\kidim\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512",
+    "C:\\Users\\kidim\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
   ],
   "logs": []
 }
