@@ -107,6 +107,10 @@ namespace API
 
             app.UseRouting();
 
+            //added for react in production
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+
             app.UseCors(opt =>
             {
                 opt.AllowAnyHeader().AllowAnyMethod().AllowCredentials().WithOrigins("http://localhost:3000");
@@ -119,6 +123,9 @@ namespace API
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+
+                //use this for react in production
+                endpoints.MapFallbackToController("Index", "Fallback");
             });
         }
     }
